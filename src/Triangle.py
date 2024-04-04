@@ -1,5 +1,5 @@
 import math
-import Figure
+from Figure import Figure
 
 class Triangle(Figure):
     def __init__(self, side_a: int, side_b: int, side_c: int, name):
