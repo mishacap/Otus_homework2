@@ -1,4 +1,4 @@
-from Figure import class Figure
+from Figure import Figure
 
 
 class Rectangle(Figure):
