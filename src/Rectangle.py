@@ -2,7 +2,7 @@ from Figure import Figure
 
 
 class Rectangle(Figure):
-    def __init__(self, side_a: int, side_b: int, name):
+    def __init__(self, side_a: int, side_b: int):
         super().__init__(name="Rectangle")
         if side_a <= 0 or side_b <= 0:
             raise ValueError("Нельзя создать прямоугольник")

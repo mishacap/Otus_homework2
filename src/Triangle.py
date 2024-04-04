@@ -2,7 +2,7 @@ import math
 from Figure import Figure
 
 class Triangle(Figure):
-    def __init__(self, side_a: int, side_b: int, side_c: int, name):
+    def __init__(self, side_a: int, side_b: int, side_c: int):
         super().__init__(name="Triangle")
         if side_a <= 0 or side_b <= 0 or side_c <= 0:
             raise ValueError("Нельзя создать треугольник")
