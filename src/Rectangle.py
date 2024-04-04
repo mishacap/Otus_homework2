@@ -12,6 +12,6 @@ class Rectangle(Figure):
     def get_area(self):
         return self.side_b * self.side_b
 
-    def get_perimetr(self):
+    def get_perimeter(self):
         return 2 * (self.side_a + self.side_b)
 
