@@ -1,7 +1,7 @@
 import math
 import Figure
 
-class Triangle(Figure.Figure):
+class Triangle(Figure):
     def __init__(self, side_a: int, side_b: int, side_c: int, name):
         super().__init__(name="Triangle")
         if side_a <= 0 or side_b <= 0 or side_c <= 0:
