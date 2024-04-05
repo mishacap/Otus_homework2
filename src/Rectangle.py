@@ -9,8 +9,8 @@ class Rectangle(Figure):
         self.side_a = side_a
         self.side_b = side_b
 
-    def get_area(self) -> int:
+    def get_area(self):
         return self.side_a * self.side_b
 
-    def get_perimeter(self) -> int:
+    def get_perimeter(self):
         return 2 * (self.side_a + self.side_b)
