@@ -1,4 +1,4 @@
-import math
+from math import pi
 from Figure import Figure
 
 class Circle(Figure):
@@ -9,7 +9,15 @@ class Circle(Figure):
         self.radius = radius
 
     def get_area(self):
-        return math.pi * self.radius ** 2
+        return pi * self.radius ** 2
 
+    # @property
     def get_perimeter(self):
-        return 2 * math.pi * self.radius
+        return 2 * pi * self.radius
+
+hui = Circle(5)
+pizda = Circle(8)
+
+assert pizda.radius == 8
+
+assert hui.radius > pizda.radius
