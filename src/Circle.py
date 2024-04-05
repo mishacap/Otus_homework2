@@ -14,10 +14,3 @@ class Circle(Figure):
     # @property
     def get_perimeter(self):
         return 2 * pi * self.radius
-
-hui = Circle(5)
-pizda = Circle(8)
-
-assert pizda.radius == 8
-
-assert hui.radius > pizda.radius
