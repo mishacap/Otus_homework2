@@ -5,7 +5,7 @@ class Circle(Figure):
     def __init__(self, radius: int):
         super().__init__(name="Circle")
         if radius <= 0:
-            raise ValueError("Нельзя создать окружность")
+            raise ValueError("Circle cannot be created")
         self.radius = radius
 
     def get_area(self):

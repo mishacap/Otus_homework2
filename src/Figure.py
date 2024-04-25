@@ -15,5 +15,5 @@ class Figure(ABC):
 
     def add_area(self, other_figure):
         if not isinstance(other_figure, Figure):
-            raise ValueError("Нужно передать фигуру")
+            raise ValueError("Pass the figure")
         return self.get_area() + other_figure.get_area()
