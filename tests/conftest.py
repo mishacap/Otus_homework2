@@ -38,7 +38,7 @@ def square_data_perimeter():
 
 
 @pytest.fixture()
-def square_data():
+def square_data_area():
 
     def _wrapper(data: str):
         if data == "integer":
@@ -47,6 +47,7 @@ def square_data():
             return 3.5, 12.25
 
     yield _wrapper
+
 
 
 @pytest.fixture()
