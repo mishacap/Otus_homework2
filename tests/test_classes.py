@@ -19,6 +19,14 @@ def test_perimeter_rectangle_positive(rectangle_data_perimeter, rectangle_data_p
     r = Rectangle(side_a, side_b)
     assert r.get_perimeter() == perimeter, f"Perimeter should be {2 * side_a + 2 * side_b}"
 
+
+@pytest.mark.parametrize("square_data_perimeter_1", ["integer", "float"])
+def test_perimeter_square_positive(square_data_perimeter, square_data_perimeter_1):
+    side_a, perimeter = square_data_perimeter(data=square_data_perimeter_1)
+    s = Square(side_a)
+    assert s.get_perimeter() == perimeter, f"Perimeter should be {4 * side_a}"
+
+
 @pytest.mark.parametrize("square_data_1", ["integer", "float"])
 def test_area_square_positive(square_data, square_data_1):
     side_a, area = square_data(data=square_data_1)
