@@ -14,6 +14,18 @@ def rectangle_data_area():
 
 
 @pytest.fixture()
+def rectangle_data_perimeter():
+
+    def _wrapper(data: str):
+        if data == "integer":
+            return 6, 7, 26
+        if data == "float":
+            return 8.2, 9.4, 35.2
+
+    yield _wrapper
+
+
+@pytest.fixture()
 def square_data():
 
     def _wrapper(data: str):
