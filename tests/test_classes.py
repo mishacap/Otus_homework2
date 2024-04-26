@@ -30,8 +30,8 @@ def test_perimeter_square_positive(square_data_perimeter, square_data_perimeter_
 @pytest.mark.parametrize("square_data_1", ["integer", "float"])
 def test_area_square_positive(square_data, square_data_1):
     side_a, area = square_data(data=square_data_1)
-    r = Square(side_a)
-    assert r.get_area() == area, f"Area should be {side_a * side_a}"
+    s = Square(side_a)
+    assert s.get_area() == area, f"Area should be {side_a * side_a}"
 
 
 # def test_rectangle_negative():
