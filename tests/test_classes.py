@@ -34,9 +34,8 @@ def test_perimeter_square_positive(square_data_perimeter, square_data_perimeter_
     assert s.get_perimeter() == perimeter, f"Perimeter should be {4 * side_a}"
 
 
-# def test_rectangle_negative():
-#     with pytest.raises(ValueError):
-#         Rectangle(-3, 5)
+def test_area_circle_positive
+
 
 @pytest.mark.parametrize('rectangle_bad_data_1', [
     "side_a is 0",

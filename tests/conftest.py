@@ -49,6 +49,16 @@ def square_data_area():
     yield _wrapper
 
 
+def circle_data_area():
+
+    def _wrapper(data: str):
+        if data == "integer":
+            return 5, 25
+        if data == "float":
+            return 3.5, 12.25
+
+    yield _wrapper
+
 
 @pytest.fixture()
 def rectangle_bad_data():
