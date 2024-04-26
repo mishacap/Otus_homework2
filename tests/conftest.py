@@ -53,9 +53,9 @@ def circle_data_area():
 
     def _wrapper(data: str):
         if data == "integer":
-            return 5, 25
+            return 10, 314
         if data == "float":
-            return 3.5, 12.25
+            return 12.3, 475.29
 
     yield _wrapper
 
