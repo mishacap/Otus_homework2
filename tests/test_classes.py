@@ -42,6 +42,12 @@ def test_area_circle_positive(circle_data_area, circle_data_area_1):
     assert c.get_area() == area, f"Area should be {pi * radius ** 2}"
 
 
+@pytest.mark.parametrize("circle_data_perimeter_1", ["integer", "float"])
+def test_perimeter_circle_positive(circle_data_perimeter, circle_data_perimeter_1):
+    radius, perimeter = circle_data_perimeter(data=circle_data_perimeter_1)
+    c = Circle(radius)
+    assert c.get_perimeter() == perimeter, f"Perimeter should be {2 * pi * radius}"
+
 @pytest.mark.parametrize('rectangle_bad_data_1', [
     "side_a is 0",
     "side_b is 0",
