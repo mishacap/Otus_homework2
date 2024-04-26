@@ -49,6 +49,7 @@ def square_data_area():
     yield _wrapper
 
 
+@pytest.fixture()
 def circle_data_area():
 
     def _wrapper(data: str):
