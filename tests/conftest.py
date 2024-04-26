@@ -2,13 +2,25 @@ import pytest
 
 
 @pytest.fixture()
-def rectangle_data():
+def rectangle_data_area():
 
     def _wrapper(data: str):
         if data == "integer":
             return 3, 5, 15
         if data == "float":
             return 3.5, 5.5, 19.25
+
+    yield _wrapper
+
+
+@pytest.fixture()
+def square_data():
+
+    def _wrapper(data: str):
+        if data == "integer":
+            return 5, 25
+        if data == "float":
+            return 3.5, 12.25
 
     yield _wrapper
 
