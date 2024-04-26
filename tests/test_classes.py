@@ -3,6 +3,7 @@ from src.Square import Square
 from src.Circle import Circle
 from src.Triangle import Triangle
 import pytest
+from math import pi
 from datetime import datetime
 
 
@@ -34,7 +35,11 @@ def test_perimeter_square_positive(square_data_perimeter, square_data_perimeter_
     assert s.get_perimeter() == perimeter, f"Perimeter should be {4 * side_a}"
 
 
-def test_area_circle_positive
+@pytest.mark.parametrize("circle_data_area_1", ["integer", "float"])
+def test_area_circle_positive(circle_data_area, circle_data_area_1):
+    radius, area = circle_data_area(data= circle_data_area_1)
+    c = Circle(radius)
+    assert c.get_area() == area, f"Area should be {round(pi * radius ** 2, 2)}"
 
 
 @pytest.mark.parametrize('rectangle_bad_data_1', [
