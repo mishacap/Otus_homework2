@@ -5,7 +5,6 @@ from src.Rectangle import Rectangle
 from src.Square import Square
 from src.Circle import Circle
 from src.Triangle import Triangle
-import src.Figure
 
 
 @pytest.mark.parametrize("rectangle_data_area_1", ["integer", "float"])
