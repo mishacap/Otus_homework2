@@ -85,6 +85,18 @@ def triangle_data_area():
 
 
 @pytest.fixture()
+def triangle_data_perimeter():
+
+    def _wrapper(data: str):
+        if data == "integer":
+            return 20, 24, 29, 73
+        if data == "float":
+            return 32.6, 37.4, 39.8, 109.8
+
+    yield _wrapper
+
+
+@pytest.fixture()
 def rectangle_bad_data():
 
     def _wrapper(data: str):

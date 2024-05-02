@@ -57,6 +57,13 @@ def test_area_triangle_positive(triangle_data_area, triangle_data_area_1):
     p = (side_a + side_b + side_c) / 2
     assert s.get_area() == area, f"Area should be {sqrt(p * (p - side_a) * (p - side_b) * (p - side_c))}"
 
+
+@pytest.mark.parametrize("triangle_data_perimeter_1", ["integer", "float"])
+def test_perimeter_triangle_positive(triangle_data_perimeter, triangle_data_perimeter_1):
+    side_a, side_b, side_c, area = triangle_data_perimeter(data=triangle_data_perimeter_1)
+    p = Triangle(side_a, side_b, side_c)
+    assert p.get_perimeter() == area, f"Perimeter should be {side_a + side_b + side_c}"
+
 @pytest.mark.parametrize('rectangle_bad_data_1', [
     "side_a is 0",
     "side_b is 0",
