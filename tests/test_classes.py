@@ -108,6 +108,13 @@ def test_triangle_negative(triangle_bad_data, triangle_bad_data_1):
     with pytest.raises(ValueError):
         Triangle(side_a, side_b, side_c)
 
+
+def test_figure_negative():
+    c = Circle(5)
+    no_figure = 10
+    with pytest.raises(ValueError):
+        c.add_area(no_figure)
+
 # def test_rectangle_positive_float():
 #         r = Rectangle(3.5, 5.5)
 #         assert r.get_area() == 19.25, f"Area should be {3.5 * 5.5}"
