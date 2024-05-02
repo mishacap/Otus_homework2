@@ -1,11 +1,11 @@
+from math import pi
+from math import sqrt
+import pytest
 from src.Rectangle import Rectangle
 from src.Square import Square
 from src.Circle import Circle
 from src.Triangle import Triangle
 import src.Figure
-import pytest
-from math import pi
-from math import sqrt
 
 
 @pytest.mark.parametrize("rectangle_data_area_1", ["integer", "float"])
@@ -38,7 +38,7 @@ def test_perimeter_square_positive(square_data_perimeter, square_data_perimeter_
 
 @pytest.mark.parametrize("circle_data_area_1", ["integer", "float"])
 def test_area_circle_positive(circle_data_area, circle_data_area_1):
-    radius, area = circle_data_area(data= circle_data_area_1)
+    radius, area = circle_data_area(data=circle_data_area_1)
     c = Circle(radius)
     assert c.get_area() == area, f"Area should be {pi * radius ** 2}"
 
@@ -55,7 +55,8 @@ def test_area_triangle_positive(triangle_data_area, triangle_data_area_1):
     side_a, side_b, side_c, area = triangle_data_area(data=triangle_data_area_1)
     s = Triangle(side_a, side_b, side_c)
     p = (side_a + side_b + side_c) / 2
-    assert s.get_area() == area, f"Area should be {sqrt(p * (p - side_a) * (p - side_b) * (p - side_c))}"
+    assert s.get_area() == area, (f"Area should be "
+                                  f"{sqrt(p * (p - side_a) * (p - side_b) * (p - side_c))}")
 
 
 @pytest.mark.parametrize("triangle_data_perimeter_1", ["integer", "float"])
@@ -65,10 +66,12 @@ def test_perimeter_triangle_positive(triangle_data_perimeter, triangle_data_peri
     assert p.get_perimeter() == area, f"Perimeter should be {side_a + side_b + side_c}"
 
 
-@pytest.mark.parametrize("figure_data_add_area_1", ["integer rectangle + square", "float rectangle + square"])
+@pytest.mark.parametrize("figure_data_add_area_1",
+                         ["integer rectangle + square",
+                          "float rectangle + square"])
 # The test will verify the addition of areas of a rectangle and a square
 def test_figure_data_add_area(figure_data_add_area, figure_data_add_area_1):
-    side_a, side_b, side_c, add_result = figure_data_add_area(data = figure_data_add_area_1)
+    side_a, side_b, side_c, add_result = figure_data_add_area(data=figure_data_add_area_1)
     r = Rectangle(side_a, side_b)
     s = Square(side_c)
     assert r.add_area(s) == add_result, f"Sum of the areas should be {side_a * side_b + 2 * side_c}"

@@ -17,5 +17,6 @@ class Triangle(Figure):
         p = (self.side_a + self.side_b + self.side_c) / 2
         return round(sqrt(p * (p - self.side_a) * (p - self.side_b) * (p - self.side_c)), 2)
 
+
     def get_perimeter(self):
         return round(self.side_a + self.side_b + self.side_c, 2)

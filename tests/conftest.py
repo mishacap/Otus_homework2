@@ -146,14 +146,3 @@ def triangle_bad_data():
             return 3, 4, 10
 
     yield _wrapper
-
-
-# @pytest.fixture()
-# def figure_add_area_bad_data():
-#     def _wrapper(data: str):
-#         if data == "one side is 0":
-#             return 0, 5, 6
-#         if data == "wrong size of sides":
-#             return 3, 4, 10
-#
-#     yield _wrapper
