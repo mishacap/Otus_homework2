@@ -3,7 +3,6 @@ import pytest
 
 @pytest.fixture()
 def rectangle_data_area():
-
     def _wrapper(data: str):
         if data == "integer":
             return 3, 5, 15
@@ -15,7 +14,6 @@ def rectangle_data_area():
 
 @pytest.fixture()
 def rectangle_data_perimeter():
-
     def _wrapper(data: str):
         if data == "integer":
             return 6, 7, 26
@@ -27,7 +25,6 @@ def rectangle_data_perimeter():
 
 @pytest.fixture()
 def square_data_perimeter():
-
     def _wrapper(data: str):
         if data == "integer":
             return 10, 40
@@ -39,7 +36,6 @@ def square_data_perimeter():
 
 @pytest.fixture()
 def square_data_area():
-
     def _wrapper(data: str):
         if data == "integer":
             return 5, 25
@@ -51,7 +47,6 @@ def square_data_area():
 
 @pytest.fixture()
 def circle_data_area():
-
     def _wrapper(data: str):
         if data == "integer":
             return 10, 314.16
@@ -74,7 +69,6 @@ def circle_data_perimeter():
 
 @pytest.fixture()
 def triangle_data_area():
-
     def _wrapper(data: str):
         if data == "integer":
             return 3, 4, 5, 6
@@ -86,7 +80,6 @@ def triangle_data_area():
 
 @pytest.fixture()
 def triangle_data_perimeter():
-
     def _wrapper(data: str):
         if data == "integer":
             return 20, 24, 29, 73
@@ -97,8 +90,18 @@ def triangle_data_perimeter():
 
 
 @pytest.fixture()
-def rectangle_bad_data():
+def figure_data_add_area():
+    def _wrapper(data: str):
+        if data == "integer rectangle + square":
+            return 5, 7, 8, 99
+        if data == "float rectangle + square":
+            return 32.6, 37.4, 39.8, 2803.28
 
+    yield _wrapper
+
+
+@pytest.fixture()
+def rectangle_bad_data():
     def _wrapper(data: str):
         if data == "side_a is 0":
             return 0, 1
@@ -114,7 +117,6 @@ def rectangle_bad_data():
 
 @pytest.fixture()
 def square_bad_data():
-
     def _wrapper(data: str):
         if data == "side is 0":
             return 0
@@ -124,10 +126,8 @@ def square_bad_data():
     yield _wrapper
 
 
-
 @pytest.fixture()
 def circle_bad_data():
-
     def _wrapper(data: str):
         if data == "radius is 0":
             return 0
@@ -136,9 +136,9 @@ def circle_bad_data():
 
     yield _wrapper
 
+
 @pytest.fixture()
 def triangle_bad_data():
-
     def _wrapper(data: str):
         if data == "one side is 0":
             return 0, 5, 6
@@ -146,3 +146,14 @@ def triangle_bad_data():
             return 3, 4, 10
 
     yield _wrapper
+
+
+# @pytest.fixture()
+# def figure_add_area_bad_data():
+#     def _wrapper(data: str):
+#         if data == "one side is 0":
+#             return 0, 5, 6
+#         if data == "wrong size of sides":
+#             return 3, 4, 10
+#
+#     yield _wrapper

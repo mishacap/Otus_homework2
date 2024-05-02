@@ -2,10 +2,10 @@ from src.Rectangle import Rectangle
 from src.Square import Square
 from src.Circle import Circle
 from src.Triangle import Triangle
+import src.Figure
 import pytest
 from math import pi
 from math import sqrt
-from datetime import datetime
 
 
 @pytest.mark.parametrize("rectangle_data_area_1", ["integer", "float"])
@@ -63,6 +63,16 @@ def test_perimeter_triangle_positive(triangle_data_perimeter, triangle_data_peri
     side_a, side_b, side_c, area = triangle_data_perimeter(data=triangle_data_perimeter_1)
     p = Triangle(side_a, side_b, side_c)
     assert p.get_perimeter() == area, f"Perimeter should be {side_a + side_b + side_c}"
+
+
+@pytest.mark.parametrize("figure_data_add_area_1", ["integer rectangle + square", "float rectangle + square"])
+# The test will verify the addition of areas of a rectangle and a square
+def test_figure_data_add_area(figure_data_add_area, figure_data_add_area_1):
+    side_a, side_b, side_c, add_result = figure_data_add_area(data = figure_data_add_area_1)
+    r = Rectangle(side_a, side_b)
+    s = Square(side_c)
+    assert r.add_area(s) == add_result, f"Sum of the areas should be {side_a * side_b + 2 * side_c}"
+
 
 @pytest.mark.parametrize('rectangle_bad_data_1', [
     "side_a is 0",
